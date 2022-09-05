@@ -1,1 +1,0 @@
-# sdrangel-windows-libraries
