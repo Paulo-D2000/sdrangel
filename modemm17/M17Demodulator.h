@@ -64,7 +64,7 @@ struct MODEMM17_API M17Demodulator
 	bool need_clock_update_ = false;
 
 	bool passall_ = false;
-	int viterbi_cost = 0;
+	size_t viterbi_cost = 0;
 	int sync_count = 0;
 	int missing_sync_count = 0;
 	uint8_t sync_sample_index = 0;

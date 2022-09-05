@@ -2,6 +2,7 @@
 CMakeLists.txt.user*
 CMakeUserPresets.json
 build*/
+build.bat
 debug/
 qtbuild/*
 sdriq/*
