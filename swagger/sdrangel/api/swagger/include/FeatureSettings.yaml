@@ -1,0 +1,49 @@
+FeatureSettings:
+  description: Base feature settings. Only the feature settings corresponding to the feature specified in the featureType field is or should be present.
+  discriminator: featureType
+  required:
+    - featureType
+  properties:
+    featureType:
+      description: Feature type code
+      type: string
+    originatorFeatureSetIndex:
+      description: Optional for reverse API. This is the feature set index from where the message comes from.
+      type: integer
+    originatorFeatureIndex:
+      description: Optional for reverse API. This is the feature index from where the message comes from.
+      type: integer
+    AFCSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/AFC.yaml#/AFCSettings"
+    AISSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/AIS.yaml#/AISSettings"
+    AMBESettings:
+      $ref: "http://swgserver:8081/api/swagger/include/AMBE.yaml#/AMBESettings"
+    AntennaToolsSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/AntennaTools.yaml#/AntennaToolsSettings"
+    APRSSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/APRS.yaml#/APRSSettings"
+    DemodAnalyzerSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/DemodAnalyzer.yaml#/DemodAnalyzerSettings"
+    JogdialControllerSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/JogdialController.yaml#/JogdialControllerSettings"
+    GS232ControllerSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/GS232Controller.yaml#/GS232ControllerSettings"
+    LimeRFESettings:
+      $ref: "http://swgserver:8081/api/swagger/include/LimeRFE.yaml#/LimeRFESettings"
+    MapSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/Map.yaml#/MapSettings"
+    PERTesterSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/PERTester.yaml#/PERTesterSettings"
+    RadiosondeSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/Radiosonde.yaml#/RadiosondeSettings"
+    RigCtlServerSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/RigCtlServer.yaml#/RigCtlServerSettings"
+    SatelliteTrackerSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/SatelliteTracker.yaml#/SatelliteTrackerSettings"
+    StarTrackerSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/StarTracker.yaml#/StarTrackerSettings"
+    SimplePTTSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/SimplePTT.yaml#/SimplePTTSettings"
+    VORLocalizerSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/VORLocalizer.yaml#/VORLocalizerSettings"

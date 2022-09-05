@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="/map/">
+    <file>map/map.qml</file>
+    <file>map/map_5_12.qml</file>
+    <file>map/antenna.png</file>
+    <file>map/antennatime.png</file>
+    <file>map/antennadab.png</file>
+    <file>map/antennafm.png</file>
+    <file>map/antennaam.png</file>
+    <file>map/ionosonde.png</file>
+    <file>map/map3d.html</file>
+  </qresource>
+  <qresource prefix="/">
+    <file>Cesium/Cesium.js</file>
+  </qresource>
+</RCC>

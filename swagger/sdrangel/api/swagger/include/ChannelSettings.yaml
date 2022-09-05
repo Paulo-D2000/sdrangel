@@ -1,0 +1,119 @@
+ChannelSettings:
+  description: Base channel settings. Only the channel settings corresponding to the channel specified in the channelType field is or should be present.
+  discriminator: channelType
+  required:
+    - channelType
+    - direction
+  properties:
+    channelType:
+      description: Channel type code
+      type: string
+    direction:
+      description: 0 for Rx only, 1 for Tx only or 2 for any number and direction (default 0)
+      type: integer
+    originatorDeviceSetIndex:
+      description: Optional for reverse API. This is the device set index from where the message comes from.
+      type: integer
+    originatorChannelIndex:
+      description: Optional for reverse API. This is the channel index from where the message comes from.
+      type: integer
+    ADSBDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/ADSBDemod.yaml#/ADSBDemodSettings"
+    AISDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/AISDemod.yaml#/AISDemodSettings"
+    AISModSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/AISMod.yaml#/AISModSettings"
+    AMDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/AMDemod.yaml#/AMDemodSettings"
+    AMModSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/AMMod.yaml#/AMModSettings"
+    APTDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/APTDemod.yaml#/APTDemodSettings"
+    ATVDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/ATVDemod.yaml#/ATVDemodSettings"
+    ATVModSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/ATVMod.yaml#/ATVModSettings"
+    BeamSteeringCWModSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/BeamSteeringCWMod.yaml#/BeamSteeringCWModSettings"
+    BFMDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/BFMDemod.yaml#/BFMDemodSettings"
+    ChannelAnalyzerSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/ChannelAnalyzer.yaml#/ChannelAnalyzerSettings"
+    ChirpChatDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/ChirpChatDemod.yaml#/ChirpChatDemodSettings"
+    ChirpChatModSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/ChirpChatMod.yaml#/ChirpChatModSettings"
+    DATVModSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/DATVMod.yaml#/DATVModSettings"
+    DATVDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/DATVDemod.yaml#/DATVDemodSettings"
+    DABDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/DABDemod.yaml#/DABDemodSettings"
+    DOA2Settings:
+      $ref: "http://swgserver:8081/api/swagger/include/DOA2.yaml#/DOA2Settings"
+    DSDDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/DSDDemod.yaml#/DSDDemodSettings"
+    FileSinkSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/FileSink.yaml#/FileSinkSettings"
+    FileSourceSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/FileSource.yaml#/FileSourceSettings"
+    FreeDVDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/FreeDVDemod.yaml#/FreeDVDemodSettings"
+    FreeDVModSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/FreeDVMod.yaml#/FreeDVModSettings"
+    FreqTrackerSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/FreqTracker.yaml#/FreqTrackerSettings"
+    InterferometerSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/Interferometer.yaml#/InterferometerSettings"
+    IEEE_802_15_4_ModSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/IEEE_802_15_4_Mod.yaml#/IEEE_802_15_4_ModSettings"
+    M17DemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/M17Demod.yaml#/M17DemodSettings"
+    M17ModSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/M17Mod.yaml#/M17ModSettings"
+    NFMDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/NFMDemod.yaml#/NFMDemodSettings"
+    NFMModSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/NFMMod.yaml#/NFMModSettings"
+    NoiseFigureSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/NoiseFigure.yaml#/NoiseFigureSettings"
+    LocalSinkSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/LocalSink.yaml#/LocalSinkSettings"
+    LocalSourceSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/LocalSource.yaml#/LocalSourceSettings"
+    PacketDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/PacketDemod.yaml#/PacketDemodSettings"
+    PacketModSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/PacketMod.yaml#/PacketModSettings"
+    PagerDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/PagerDemod.yaml#/PagerDemodSettings"
+    RadioAstronomySettings:
+      $ref: "http://swgserver:8081/api/swagger/include/RadioAstronomy.yaml#/RadioAstronomySettings"
+    RadioClockSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/RadioClock.yaml#/RadioClockSettings"
+    RadiosondeDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/RadiosondeDemod.yaml#/RadiosondeDemodSettings"
+    RemoteSinkSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/RemoteSink.yaml#/RemoteSinkSettings"
+    RemoteSourceSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/RemoteSource.yaml#/RemoteSourceSettings"
+    RemoteTCPSinkSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/RemoteTCPSink.yaml#/RemoteTCPSinkSettings"
+    SigMFFileSinkSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/SigMFFileSink.yaml#/SigMFFileSinkSettings"
+    SSBModSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/SSBMod.yaml#/SSBModSettings"
+    SSBDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/SSBDemod.yaml#/SSBDemodSettings"
+    UDPSourceSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/UDPSource.yaml#/UDPSourceSettings"
+    UDPSinkSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/UDPSink.yaml#/UDPSinkSettings"
+    # VORDemodMCSettings:
+    #   $ref: "http://swgserver:8081/api/swagger/include/VORDemodMC.yaml#/VORDemodMCSettings"
+    VORDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/VORDemod.yaml#/VORDemodSettings"
+    WFMDemodSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/WFMDemod.yaml#/WFMDemodSettings"
+    WFMModSettings:
+      $ref: "http://swgserver:8081/api/swagger/include/WFMMod.yaml#/WFMModSettings"

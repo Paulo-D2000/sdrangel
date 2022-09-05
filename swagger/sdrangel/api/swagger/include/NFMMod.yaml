@@ -1,0 +1,99 @@
+NFMModSettings:
+  description: NFMMod
+  properties:
+    inputFrequencyOffset:
+      type: integer
+      format: int64
+    rfBandwidth:
+      type: number
+      format: float
+    afBandwidth:
+      type: number
+      format: float
+    fmDeviation:
+      type: number
+      format: float
+    toneFrequency:
+      type: number
+      format: float
+    volumeFactor:
+      type: number
+      format: float
+    channelMute:
+      type: integer
+    playLoop:
+      type: integer
+    ctcssOn:
+      description: >
+        Enable CTCSS squelch (takes precedence on DCS)
+        * 0 - disabled
+        * 1 - enabled
+      type: integer
+    ctcssIndex:
+      type: integer
+    dcsOn:
+      description: >
+        Enable DCS squelch (only if CTCSS is off)
+        * 0 - disabled
+        * 1 - enabled
+      type: integer
+    dcsCode:
+      type: integer
+    dcsPositive:
+      description: >
+        Modulation direction:
+        * 0 - reverse or negative - 1 for 0 and -1 for 1
+        * 1 - direct or positive - -1 for 0 and 1 for 1
+      type: integer
+    rgbColor:
+      type: integer
+    title:
+      type: string
+    audioDeviceName:
+      type: string
+    modAFInput:
+      type: integer
+    preEmphasisOn:
+      type: integer
+      description: >
+        Activate pre-emphasis filter:
+        * 0 - inactive
+        * 1 - active
+    bpfOn:
+      type: integer
+      description: >
+        Activate audio highpass filter when no CTCSS nor DCS:
+        * 0 - inactive
+        * 1 - active
+    streamIndex:
+      description: MIMO channel. Not relevant when connected to SI (single Rx).
+      type: integer
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIDeviceIndex:
+      type: integer
+    reverseAPIChannelIndex:
+      type: integer
+    cwKeyer:
+      $ref: "http://swgserver:8081/api/swagger/include/CWKeyer.yaml#/CWKeyerSettings"
+    channelMarker:
+      $ref: "http://swgserver:8081/api/swagger/include/ChannelMarker.yaml#/ChannelMarker"
+    rollupState:
+      $ref: "http://swgserver:8081/api/swagger/include/RollupState.yaml#/RollupState"
+
+NFMModReport:
+  description: NFMMod
+  properties:
+    channelPowerDB:
+      description: power transmitted in channel (dB)
+      type: number
+      format: float
+    audioSampleRate:
+      type: integer
+    channelSampleRate:
+      type: integer

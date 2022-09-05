@@ -1,0 +1,31 @@
+FeatureReport:
+  description: Base feature report. Only the feature report corresponding to the feature specified in the featureType field is or should be present.
+  discriminator: featureType
+  required:
+    - featureType
+  properties:
+    featureType:
+      description: Feature type code
+      type: string
+    AFCReport:
+      $ref: "http://swgserver:8081/api/swagger/include/AFC.yaml#/AFCReport"
+    AMBEReport:
+      $ref: "http://swgserver:8081/api/swagger/include/AMBE.yaml#/AMBEReport"
+    GS232ControllerReport:
+      $ref: "http://swgserver:8081/api/swagger/include/GS232Controller.yaml#/GS232ControllerReport"
+    LimeRFEReport:
+      $ref: "http://swgserver:8081/api/swagger/include/LimeRFE.yaml#/LimeRFEReport"
+    MapReport:
+      $ref: "http://swgserver:8081/api/swagger/include/Map.yaml#/MapReport"
+    PERTesterReport:
+      $ref: "http://swgserver:8081/api/swagger/include/PERTester.yaml#/PERTesterReport"
+    RigCtlServerReport:
+      $ref: "http://swgserver:8081/api/swagger/include/RigCtlServer.yaml#/RigCtlServerReport"
+    SatelliteTrackerReport:
+      $ref: "http://swgserver:8081/api/swagger/include/SatelliteTracker.yaml#/SatelliteTrackerReport"
+    SimplePTTReport:
+      $ref: "http://swgserver:8081/api/swagger/include/SimplePTT.yaml#/SimplePTTReport"
+    StarTrackerReport:
+      $ref: "http://swgserver:8081/api/swagger/include/StarTracker.yaml#/StarTrackerReport"
+    VORLocalizerReport:
+      $ref: "http://swgserver:8081/api/swagger/include/VORLocalizer.yaml#/VORLocalizerReport"

@@ -1,0 +1,30 @@
+Preferences:
+  description: Repreents a Prefernce object
+  properties:
+    sourceDevice:
+      description: Identification of the source used in R0 tab (GUI flavor) at startup
+      type: string
+    sourceIndex:
+      description: Index of the source used in R0 tab (GUI flavor) at startup
+      type: integer
+    audioType:
+      type: string
+    audioDevice:
+      type: string
+    latitude:
+      type: number
+      format: float
+    longitude:
+      type: number
+      format: float
+    consoleMinLogLevel:
+      description: See QtMsgType
+      type: integer
+    useLogFile:
+      description: boolean
+      type: integer
+    logFileName:
+      type: string
+    fileMinLogLevel:
+      description: See QtMsgType
+      type: integer

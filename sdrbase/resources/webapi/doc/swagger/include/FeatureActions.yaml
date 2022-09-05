@@ -1,0 +1,37 @@
+FeatureActions:
+  description: Base feature actions. Only the feature actions corresponding to the feature specified in the featureType field is or should be present.
+  discriminator: featureType
+  required:
+    - featureType
+  properties:
+    featureType:
+      description: Feature type code
+      type: string
+    originatorFeatureSetIndex:
+      description: Optional for reverse API. This is the feature set index from where the message comes from.
+      type: integer
+    originatorFeatureIndex:
+      description: Optional for reverse API. This is the feature index from where the message comes from.
+      type: integer
+    AFCActions:
+      $ref: "/doc/swagger/include/AFC.yaml#/AFCActions"
+    AMBEActions:
+      $ref: "/doc/swagger/include/AMBE.yaml#/AMBEActions"
+    GS232ControllerActions:
+      $ref: "/doc/swagger/include/GS232Controller.yaml#/GS232ControllerActions"
+    LimeRFEActions:
+      $ref: "/doc/swagger/include/LimeRFE.yaml#/LimeRFEActions"
+    MapActions:
+      $ref: "/doc/swagger/include/Map.yaml#/MapActions"
+    PERTesterActions:
+      $ref: "/doc/swagger/include/PERTester.yaml#/PERTesterActions"
+    RigCtlServerActions:
+      $ref: "/doc/swagger/include/RigCtlServer.yaml#/RigCtlServerActions"
+    SatelliteTrackerActions:
+      $ref: "/doc/swagger/include/SatelliteTracker.yaml#/SatelliteTrackerActions"
+    SimplePTTActions:
+      $ref: "/doc/swagger/include/SimplePTT.yaml#/SimplePTTActions"
+    StarTrackerActions:
+      $ref: "/doc/swagger/include/StarTracker.yaml#/StarTrackerActions"
+    VORLocalizerActions:
+      $ref: "/doc/swagger/include/VORLocalizer.yaml#/VORLocalizerActions"

@@ -1,0 +1,100 @@
+DeviceSettings:
+  description: Base device settings. Only the device settings corresponding to the device specified in the deviceHwType field is or should be present.
+  discriminator: deviceHwType
+  required:
+    - deviceHwType
+    - direction
+  properties:
+    deviceHwType:
+      description: Device hardware type code
+      type: string
+    direction:
+      description: 0 for Rx only, 1 for Tx only or 2 for any number and direction (default 0)
+      type: integer
+    originatorIndex:
+      description: Optional for reverse API. This is the device set index from where the message comes from.
+      type: integer
+    airspySettings:
+      $ref: "/doc/swagger/include/Airspy.yaml#/AirspySettings"
+    airspyHFSettings:
+      $ref: "/doc/swagger/include/AirspyHF.yaml#/AirspyHFSettings"
+    audioInputSettings:
+      $ref: "/doc/swagger/include/AudioInput.yaml#/AudioInputSettings"
+    audioOutputSettings:
+      $ref: "/doc/swagger/include/AudioOutput.yaml#/AudioOutputSettings"
+    bladeRF1InputSettings:
+      $ref: "/doc/swagger/include/BladeRF1.yaml#/BladeRF1InputSettings"
+    bladeRF2InputSettings:
+      $ref: "/doc/swagger/include/BladeRF2.yaml#/BladeRF2InputSettings"
+    bladeRF1OutputSettings:
+      $ref: "/doc/swagger/include/BladeRF1.yaml#/BladeRF1OutputSettings"
+    bladeRF2OutputSettings:
+      $ref: "/doc/swagger/include/BladeRF2.yaml#/BladeRF2OutputSettings"
+    bladeRF2MIMOSettings:
+      $ref: "/doc/swagger/include/BladeRF2.yaml#/BladeRF2MIMOSettings"
+    fcdProSettings:
+      $ref: "/doc/swagger/include/FCDPro.yaml#/FCDProSettings"
+    fcdProPlusSettings:
+      $ref: "/doc/swagger/include/FCDProPlus.yaml#/FCDProPlusSettings"
+    fileInputSettings:
+      $ref: "/doc/swagger/include/FileInput.yaml#/FileInputSettings"
+    fileOutputSettings:
+      $ref: "/doc/swagger/include/FileOutput.yaml#/FileOutputSettings"
+    hackRFInputSettings:
+      $ref: "/doc/swagger/include/HackRF.yaml#/HackRFInputSettings"
+    hackRFOutputSettings:
+      $ref: "/doc/swagger/include/HackRF.yaml#/HackRFOutputSettings"
+    kiwiSDRSettings:
+      $ref: "/doc/swagger/include/KiwiSDR.yaml#/KiwiSDRSettings"
+    limeSdrInputSettings:
+      $ref: "/doc/swagger/include/LimeSdr.yaml#/LimeSdrInputSettings"
+    limeSdrOutputSettings:
+      $ref: "/doc/swagger/include/LimeSdr.yaml#/LimeSdrOutputSettings"
+    limeSdrMIMOSettings:
+      $ref: "/doc/swagger/include/LimeSdr.yaml#/LimeSdrMIMOSettings"
+    localInputSettings:
+      $ref: "/doc/swagger/include/LocalInput.yaml#/LocalInputSettings"
+    localOutputSettings:
+      $ref: "/doc/swagger/include/LocalOutput.yaml#/LocalOutputSettings"
+    metisMISOSettings:
+      $ref: "/doc/swagger/include/MetisMISO.yaml#/MetisMISOSettings"
+    perseusSettings:
+      $ref: "/doc/swagger/include/Perseus.yaml#/PerseusSettings"
+    plutoSdrInputSettings:
+      $ref: "/doc/swagger/include/PlutoSdr.yaml#/PlutoSdrInputSettings"
+    plutoSdrOutputSettings:
+      $ref: "/doc/swagger/include/PlutoSdr.yaml#/PlutoSdrOutputSettings"
+    plutoSdrMIMOSettings:
+      $ref: "/doc/swagger/include/PlutoSdr.yaml#/PlutoSdrMIMOSettings"
+    rtlSdrSettings:
+      $ref: "/doc/swagger/include/RtlSdr.yaml#/RtlSdrSettings"
+    remoteOutputSettings:
+      $ref: "/doc/swagger/include/RemoteOutput.yaml#/RemoteOutputSettings"
+    remoteInputSettings:
+      $ref: "/doc/swagger/include/RemoteInput.yaml#/RemoteInputSettings"
+    sdrPlaySettings:
+      $ref: "/doc/swagger/include/SDRPlay.yaml#/SDRPlaySettings"
+    sdrPlayV3Settings:
+      $ref: "/doc/swagger/include/SDRPlayV3.yaml#/SDRPlayV3Settings"
+    sigMFFileInputSettings:
+      $ref: "/doc/swagger/include/SigMFFileInput.yaml#/SigMFFileInputSettings"
+    soapySDRInputSettings:
+      $ref: "/doc/swagger/include/SoapySDR.yaml#/SoapySDRInputSettings"
+    soapySDROutputSettings:
+      $ref: "/doc/swagger/include/SoapySDR.yaml#/SoapySDROutputSettings"
+    testMISettings:
+      $ref: "/doc/swagger/include/TestMI.yaml#/TestMISettings"
+    testMOSyncSettings:
+      $ref: "/doc/swagger/include/TestMOSync.yaml#/TestMOSyncSettings"
+    testSourceSettings:
+      $ref: "/doc/swagger/include/TestSource.yaml#/TestSourceSettings"
+    usrpInputSettings:
+      $ref: "/doc/swagger/include/USRP.yaml#/USRPInputSettings"
+    usrpOutputSettings:
+      $ref: "/doc/swagger/include/USRP.yaml#/USRPOutputSettings"
+    xtrxInputSettings:
+      $ref: "/doc/swagger/include/Xtrx.yaml#/XtrxInputSettings"
+    xtrxOutputSettings:
+      $ref: "/doc/swagger/include/Xtrx.yaml#/XtrxOutputSettings"
+    xtrxMIMOSettings:
+      $ref: "/doc/swagger/include/Xtrx.yaml#/XtrxMIMOSettings"

@@ -1,0 +1,52 @@
+PerseusSettings:
+  description: Perseus
+  properties:
+    centerFrequency:
+      type: integer
+      format: int64
+    LOppmTenths:
+      type: integer
+    devSampleRateIndex:
+      type: integer
+    log2Decim:
+      type: integer
+    adcDither:
+      description: ADC dithering (1 if active else 0)
+      type: integer
+    adcPreamp:
+      description: ADC preamplifier (1 if active else 0)
+      type: integer
+    wideBand:
+      description: Wideband mode i.e. bypass automatic RF filter (1 if active else 0)
+      type: integer
+    transverterMode:
+      type: integer
+    transverterDeltaFrequency:
+      type: integer
+      format: int64
+    iqOrder:
+      type: integer
+      description: >
+        IQ samples order
+          * 0 - Q then I (swapped)
+          * 1 - I then Q (straight)
+    attenuator:
+      description: Attenuator setting in Bels (0, 10, 20 30 dB)
+      type: integer
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIDeviceIndex:
+      type: integer
+
+PerseusReport:
+  description: Perseus
+  properties:
+    sampleRates:
+      type: array
+      items:
+        $ref: "http://swgserver:8081/api/swagger/include/Structs.yaml#/SampleRate"

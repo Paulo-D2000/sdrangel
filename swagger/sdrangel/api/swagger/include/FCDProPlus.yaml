@@ -1,0 +1,54 @@
+FCDProPlusSettings:
+  description: FCDProPlus
+  properties:
+    centerFrequency:
+      type: integer
+      format: int64
+    log2Decim:
+      type: integer
+    fcPos:
+      type: integer
+    rangeLow:
+      description: Range select (1 if low else 0)
+      type: integer
+    lnaGain:
+      description: LNA select (1 if selected else 0)
+      type: integer
+    mixGain:
+      description: Mixer amplifier select (1 if selected else 0)
+      type: integer
+    biasT:
+      description: Bias tee select (1 if selected else 0)
+      type: integer
+    ifGain:
+      type: integer
+    ifFilterIndex:
+      type: integer
+    rfFilterIndex:
+      type: integer
+    LOppmTenths:
+      type: integer
+    dcBlock:
+      type: integer
+    iqImbalance:
+      type: integer
+    transverterMode:
+      type: integer
+    transverterDeltaFrequency:
+      type: integer
+      format: int64
+    iqOrder:
+      type: integer
+      description: >
+        IQ samples order
+          * 0 - Q then I (swapped)
+          * 1 - I then Q (straight)
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIDeviceIndex:
+      type: integer

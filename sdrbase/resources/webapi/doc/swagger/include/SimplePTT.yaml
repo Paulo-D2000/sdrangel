@@ -1,0 +1,86 @@
+SimplePTTSettings:
+  description: "Simple PTT settings"
+  properties:
+    title:
+      type: string
+    rgbColor:
+      type: integer
+    rxDeviceSetIndex:
+      description: index of the Rx device set to connect the Rx side to
+      type: integer
+    txDeviceSetIndex:
+      description: index of the Tx device set to connect the Tx side to
+      type: integer
+    rx2TxDelayMs:
+      description: Delay in milliseconds from Rx off to Tx on
+      type: integer
+    tx2RxDelayMs:
+      description: Delay in milliseconds from Tx off to Rx on
+      type: integer
+    vox:
+      type: integer
+      description: >
+        Activate vox system
+          * 0 - not active
+          * 1 - active
+    voxEnable:
+      type: integer
+      description: >
+        Allow vox to control PTT
+          * 0 - vox does not control PTT
+          * 1 - vox controls PTT
+    voxLevel:
+      type: integer
+      description: Vox threshold level in dB
+    voxHold:
+      type: integer
+      description: Vox hold timeout in milliseconds
+    audioDeviceName:
+      type: string
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIFeatureSetIndex:
+      type: integer
+    reverseAPIFeatureIndex:
+      type: integer
+    rollupState:
+      $ref: "/doc/swagger/include/RollupState.yaml#/RollupState"
+
+SimplePTTReport:
+  description: "Simple PTT report"
+  properties:
+    runningState:
+      type: integer
+      description: >
+        Running state
+          * 0 - not started
+          * 1 - idle
+          * 2 - running
+          * 3 - error
+    ptt:
+      type: integer
+      description: >
+        PTT status
+          * 0 - released
+          * 1 - engaged
+
+SimplePTTActions:
+  description: "Simple PTT actions"
+  properties:
+    run:
+      type: integer
+      description: >
+        Set the plugin running state
+          * 0 - idle
+          * 1 - run
+    ptt:
+      type: integer
+      description: >
+        PTT action
+          * 0 - release
+          * 1 - engage

@@ -1,0 +1,197 @@
+SpectrumHistogramMarker:
+  description: Spectrum histogram marker settings
+  properties:
+    frequency:
+      type: number
+      format: float
+    power:
+      type: number
+      format: float
+      description: Fixed power mark
+    markerType:
+      type: integer
+      description: >
+        Marker type
+          * 0 - Fixed power
+          * 1 - Current power
+          * 2 - Max power
+    markerColor:
+      type: integer
+      description: Color in 8 bit BGR serie
+    show:
+      type: integer
+      description: >
+        Boolean - Marker display state
+          * 0 - Hidden
+          * 1 - Visible
+
+SpectrumWaterfallMarker:
+  description: Spectrum waterfall marker settings
+  properties:
+    frequency:
+      type: number
+      format: float
+    time:
+      type: number
+      format: float
+      description: Time shift in seconds
+    markerColor:
+      type: integer
+      description: Color in 8 bit BGR serie
+    show:
+      type: integer
+      description: >
+        Boolean - Marker display state
+          * 0 - Hidden
+          * 1 - Visible
+
+SpectrumAnnotationMarker:
+  description: Spectrum annotation marker settings
+  properties:
+    startFrequency:
+      type: integer
+      format: int64
+    bandwidth:
+      type: integer
+    markerColor:
+      type: integer
+      description: Color in 8 bit BGR serie
+    show:
+      type: integer
+      description: >
+        SpectrumAnnotationMarker::ShowState - Marker display state
+          * 0 - Hidden
+          * 1 - Only top marker visible
+          * 2 - Fully visible with text and full sized limits
+
+SpectrumCalibrationPoint:
+  description: Spectrum calibration point settings
+  properties:
+    frequency:
+      type: integer
+      format: int64
+    powerRelativeReference:
+      type: number
+      format: float
+    powerAbsoluteReference:
+      type: number
+      format: float
+
+GLSpectrum:
+  description: GLSpectrumGUI settings
+  properties:
+    fftSize:
+      type: integer
+    fftOverlap:
+      type: integer
+    fftWindow:
+      type: integer
+      description: >
+        FFT Window index (FFTWindow::Function):
+          * 0 - Bartlett
+          * 1 - Blackman-Harris 4 term
+          * 2 - Flattop
+          * 3 - Hamming
+          * 4 - Hanning
+          * 5 - Rectangle
+          * 6 - Kaiser
+          * 7 - Blackman 3 term
+          * 8 - Blackman-Harris 7 term
+    refLevel:
+      type: number
+      format: float
+    powerRange:
+      type: number
+      format: float
+    fpsPeriodMs:
+      type: integer
+      description: FPS capping period in milliseconds. 0 for no limit.
+    displayWaterfall:
+      description: boolean
+      type: integer
+    invertedWaterfall:
+      description: boolean
+      type: integer
+    displayMaxHold:
+      description: boolean
+      type: integer
+    displayHistogram:
+      description: boolean
+      type: integer
+    decay:
+      type: integer
+    displayGrid:
+      description: boolean
+      type: integer
+    displayGridIntensity:
+      type: integer
+    decayDivisor:
+      type: integer
+    histogramStroke:
+      type: integer
+    displayCurrent:
+      description: boolean
+      type: integer
+    displayTraceIntensity:
+      type: integer
+    waterfallShare:
+      type: number
+      format: float
+    averagingMode:
+      description: See GLSpectrumGUI::AveragingMode
+      type: integer
+    averagingValue:
+      type: integer
+    linear:
+      description: boolean
+      type: integer
+    ssb:
+      description: boolean
+      type: integer
+    usb:
+      description: boolean
+      type: integer
+    wsSpectrum:
+      type: integer
+      description: >
+        Boolean - Start or stop websocket server
+          * 0 - Stop server
+          * 1 - Start server
+    wsSpectrumAddress:
+      description: IPv4 address of interface the websocket server is listening to
+      type: string
+    wsSpectrumPort:
+      description: port on which the websocket server is listening
+      type: integer
+    markersDisplay:
+      type: integer
+      description: >
+        Display markers (SpectrumSettings::MarkersDisplay)
+          * 0 - Mome
+          * 1 - Spectrum markers (histogram and waterfall)
+          * 2 - Spectrum annotation markers
+    useCalibration:
+      type: integer
+      description: boolean
+    calibrationInterpMode:
+      type: integer
+      description: >
+        Interpolation scheme between points SpectrumSettings::CalibrationInterpolationMode
+          * 0 - Linear
+          * 1 - Log (dB linear)
+    histogramMarkers:
+      type: array
+      items:
+        $ref: "http://swgserver:8081/api/swagger/include/GLSpectrum.yaml#/SpectrumHistogramMarker"
+    waterfallMarkers:
+      type: array
+      items:
+        $ref: "http://swgserver:8081/api/swagger/include/GLSpectrum.yaml#/SpectrumWaterfallMarker"
+    annotationMarkers:
+      type: array
+      items:
+        $ref: "http://swgserver:8081/api/swagger/include/GLSpectrum.yaml#/SpectrumAnnotationMarker"
+    calibrationPoints:
+      type: array
+      items:
+        $ref: "http://swgserver:8081/api/swagger/include/GLSpectrum.yaml#/SpectrumCalibrationPoint"

@@ -1,0 +1,191 @@
+DATVDemodSettings:
+  description: DATVDemod
+  properties:
+    rgbColor:
+      type: integer
+    title:
+      type: string
+    rfBandwidth:
+      type: integer
+    centerFrequency:
+      type: integer
+    standard:
+      type: integer
+      description: >
+        DVB bersion (see DATVDemodSettings::dvb_version)
+          * 0 - DVB-S
+          * 1 - DVB-S2
+    modulation:
+      type: integer
+      description: >
+        Modulation type (DATVDemodSettings::DATVModulation)
+          * 0 - BPSK
+          * 1 - QPSK
+          * 2 - PSK8
+          * 3 - APSK16
+          * 4 - APSK32
+          * 5 - APSK64E
+          * 6 - QAM16
+          * 7 - QAM64
+          * 8 - QAM256
+    fec:
+      type: integer
+      description: >
+        FEC rate (see DATVDemodSettings::DATVCodeRate)
+          * 0 - 1/2
+          * 1 - 2/3
+          * 2 - 4/6
+          * 3 - 3/4
+          * 4 - 4/6
+          * 5 - 7/8
+          * 6 - 4/5
+          * 7 - 8/9
+          * 8 - 9/10
+          * 9 - 1/4
+          * 10 - 1/3
+          * 11 - 2/5
+          * 12 - 3/5
+    softLDPC:
+      description: (boolean) engage sodt LDPC with LDPC tool sub processes (Linux only)
+      type: integer
+    softLDPCToolPath:
+      description: O/S path to the LDPC tool binary
+      type: string
+    softLDPCMaxTrials:
+      description: maximum number of trials in the soft LDPC algorithm (LDPC tool parameter)
+      type: integer
+    maxBitflips:
+      description: maximum number of bit flips allowed in hard LDPC algorithm
+      type: integer
+    audioMute:
+      description: (boolean) mute audio output
+      type: integer
+    audioDeviceName:
+      type: string
+    symbolRate:
+      type: integer
+    notchFilters:
+      type: integer
+    allowDrift:
+      description: (boolean) allow a larger frequency drift (DVB-S)
+      type: integer
+    fastLock:
+      description: (boolean) faster locking algorithm (DVB-S)
+      type: integer
+    filter:
+      description: >
+        Type of sumbol filtering (see DATVDemodSettings::dvb_sampler)
+          * 0 - Nearest
+          * 1 - Linear
+          * 2 - Root Raised Cosine
+      type: integer
+    hardMetric:
+      description: (boolean) (DVB-S)
+      type: integer
+    rollOff:
+      description: RRC filter roll-off factor (0..1)
+      type: number
+      format: float
+    viterbi:
+      description: (boolean) (DVB-S)
+      type: integer
+    excursion:
+      description: RRC filter envelope excursion (dB)
+      type: integer
+    audioVolume:
+      type: integer
+    videoMute:
+      description: boolean
+      type: integer
+    udpTSAddress:
+      type: string
+    udpTSPort:
+      type: integer
+    udpTS:
+      description: boolean
+      type: integer
+    playerEnable:
+      description: boolean
+      type: integer
+    streamIndex:
+      description: MIMO channel. Not relevant when connected to SI (single Rx).
+      type: integer
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIDeviceIndex:
+      type: integer
+    reverseAPIChannelIndex:
+      type: integer
+    channelMarker:
+      $ref: "/doc/swagger/include/ChannelMarker.yaml#/ChannelMarker"
+    rollupState:
+      $ref: "/doc/swagger/include/RollupState.yaml#/RollupState"
+
+DATVDemodReport:
+  description: DATVDemod
+  properties:
+    channelPowerDB:
+      description: power received in channel (dB)
+      type: number
+      format: float
+    audioActive:
+      description: Audio is active (1 for yes, 0 for now)
+      type: integer
+    audioDecodeOK:
+      description: Audio decode (1 for OK, 0 for KO)
+      type: integer
+    videoActive:
+      description: Audio is active (1 for yes, 0 for now)
+      type: integer
+    videoDecodeOK:
+      description: Video decode (1 for OK, 0 for KO)
+      type: integer
+    udpRunning:
+      description: UDP thread (1 running, 0 idle)
+      type: integer
+    modcodModulation:
+      type: integer
+      description: >
+        Modulation set by DVB-S2 MODCOD
+          * -1: Unset
+          *  0: BPSK
+          *  1: QPSK
+          *  2: PSK8
+          *  3: APSK16
+          *  4: APSK32
+          *  5: APSK64E
+          *  6: QAM16
+          *  7: QAM64
+          *  8: QAM256
+    modcodCodeRate:
+      type: integer
+      description: >
+        Code rate (FEC) set by DVB-S2 MODCOD
+          * -1: Unset
+          *  0: 1/2
+          *  1: 2/3
+          *  2: 4/6
+          *  3: 3/4
+          *  4: 5/6
+          *  5: 7/8
+          *  6: 4/5
+          *  7: 8/9
+          *  8: 9/10
+          *  9: 1/4
+          * 10: 1/3
+          * 11: 2/5
+          * 12: 3/5
+    setByModcod:
+      type: integer
+      description: Modulation and code rate set by DVB-S2 MODCOD (1 for yes, 0 for no)
+    mer:
+      type: number
+      format: float
+    cnr:
+      type: number
+      format: float

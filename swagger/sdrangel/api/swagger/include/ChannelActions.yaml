@@ -1,0 +1,35 @@
+ChannelActions:
+  description: Base channel actions. Only the channel actions corresponding to the channel specified in the channelType field is or should be present.
+  discriminator: channelType
+  required:
+    - channelType
+    - direction
+  properties:
+    channelType:
+      description: Channel type code
+      type: string
+    direction:
+      description: 0 for Rx only, 1 for Tx only or 2 for any number and direction (default 0)
+      type: integer
+    originatorDeviceSetIndex:
+      description: Optional for reverse API. This is the device set index from where the message comes from.
+      type: integer
+    originatorChannelIndex:
+      description: Optional for reverse API. This is the channel index from where the message comes from.
+      type: integer
+    AISModActions:
+      $ref: "http://swgserver:8081/api/swagger/include/AISMod.yaml#/AISModActions"
+    APTDemodActions:
+      $ref: "http://swgserver:8081/api/swagger/include/APTDemod.yaml#/APTDemodActions"
+    FileSinkActions:
+      $ref: "http://swgserver:8081/api/swagger/include/FileSink.yaml#/FileSinkActions"
+    FileSourceActions:
+      $ref: "http://swgserver:8081/api/swagger/include/FileSource.yaml#/FileSourceActions"
+    IEEE_802_15_4_ModActions:
+      $ref: "http://swgserver:8081/api/swagger/include/IEEE_802_15_4_Mod.yaml#/IEEE_802_15_4_ModActions"
+    PacketModActions:
+      $ref: "http://swgserver:8081/api/swagger/include/PacketMod.yaml#/PacketModActions"
+    RadioAstronomyActions:
+      $ref: "http://swgserver:8081/api/swagger/include/RadioAstronomy.yaml#/RadioAstronomyActions"
+    SigMFFileSinkActions:
+      $ref: "http://swgserver:8081/api/swagger/include/SigMFFileSink.yaml#/SigMFFileSinkActions"

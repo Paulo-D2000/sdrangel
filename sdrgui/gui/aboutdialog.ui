@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AboutDialog</class>
+ <widget class="QDialog" name="AboutDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>484</width>
+    <height>602</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Liberation Sans</family>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>About SDRangel</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetFixedSize</enum>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Panel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../resources/res.qrc">:/sdrangel_logo.png</pixmap>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="version">
+     <property name="text">
+      <string>Here goes the version and copyright</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="buildLayout">
+     <item>
+      <widget class="QLabel" name="build">
+       <property name="text">
+        <string>Here goes the build info</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="dspBits">
+       <property name="text">
+        <string>DSP Rx 24 bits Tx 16 bits</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="runtimeLayout">
+     <item>
+      <widget class="QLabel" name="restApiUrl">
+       <property name="text">
+        <string>Here goes the REST API URL</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="pid">
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>PID: 00000</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="settingsFile">
+       <property name="text">
+        <string>Here goes the settings file location</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="info">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Code at &lt;a href=&quot;https://github.com/f4exb/sdrangel&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://github.com/f4exb/sdrangel&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Many thanks to the original developers:&lt;/p&gt;&lt;p&gt;The osmocom developer team - especially horizon, Hoernchen &amp;amp; tnt.&lt;/p&gt;&lt;p&gt;Christian Daniel from maintech GmbH.&lt;/p&gt;&lt;p&gt;John Greb (hexameron) for the contributions in &lt;a href=&quot;https://github.com/hexameron/rtl-sdrangelove&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;RTL-SDRangelove&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The following rules apply to the SDRangel main application and libsdrbase:&lt;br/&gt;This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. You should have received a copy of the GNU General Public License along with this program. If not, see &lt;a href=&quot;http://www.gnu.org/licenses/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.gnu.org/licenses/&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;For the license of installed plugins, look into the plugin list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+     <property name="openExternalLinks">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+  <include location="../resources/res.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>AboutDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>AboutDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

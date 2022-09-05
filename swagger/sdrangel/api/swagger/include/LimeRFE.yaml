@@ -1,0 +1,174 @@
+LimeRFESettings:
+  description: LimeRFE
+  properties:
+    title:
+      type: string
+    rgbColor:
+      type: integer
+    devicePath:
+      description: Path to the device serial interface (ex /dev/ttyUSB2)
+      type: string
+    rxChannels:
+      type: integer
+      description: >
+        Rx channels group (LimeRFEController::ChannelGroups):
+          * 0 - Wideband
+          * 1 - HAM
+          * 2 - cellular
+    rxWidebandChannel:
+      type: integer
+      description: >
+        Rx wideband channel selection (LimeRFEController::WidebandChannel)
+          * 0 - Low: 1 - 1000 MHz
+          * 1 - High: 1 - 4 GHz
+    rxHAMChannel:
+      type: integer
+      description: >
+        Rx HAM channel selection (LimeRFEController::HAMChannel)
+          * 0 - 30 MHz and lower
+          * 1 - 50 - 70 MHz
+          * 2 - 144 - 146 MHz
+          * 3 - 220 - 225 MHz
+          * 4 - 430 - 440 MHz
+          * 5 - 902 - 928 MHz
+          * 6 - 1240 - 1325 MHz
+          * 7 - 2300 - 2450 MHz
+          * 8 - 3300 - 3500 MHz
+    rxCellularChannel:
+      type: integer
+      description: >
+        Rx cellular channel selection (LimeRFEController::CellularChannel)
+          * 0 - Band 1: 1.92 - 1.98 GHz
+          * 1 - Band 2: 1.84 - 1.92 GHz
+          * 2 - Band 3: 1.71 - 1.79 GHz
+          * 3 - Band 7: 2.48 - 2.58 GHz
+          * 4 - Band 38: 2.56 - 2.63 GHz
+    rxPort:
+      type: integer
+      description: >
+        Rx port selected (LimeRFEController::RxPort)
+          * 0 - J3
+          * 1 - J5
+    attenuationFactor:
+      description: Rx attenuation factor. Attenuation is 2 times this factor in dB (0..7 => 0..14dB)
+      type: integer
+    amfmNotch:
+      desciption: Rx AM/FM notch filter (boolean)
+      type: integer
+    txChannels:
+      type: integer
+      description: >
+        Tx channels group (LimeRFEController::ChannelGroups)
+          * 0 - Wideband
+          * 1 - HAM
+          * 2 - cellular
+    txWidebandChannel:
+      type: integer
+      description: >
+        Tx wideband channel selection (LimeRFEController::WidebandChannel)
+          * 0 - Low: 1 - 1000 MHz
+          * 1 - High: 1 - 4 GHz
+    txHAMChannel:
+      type: integer
+      description: >
+        Tx HAM channel selection (LimeRFEController::HAMChannel)
+          * 0 - 30 MHz and lower
+          * 1 - 50 - 70 MHz
+          * 2 - 144 - 146 MHz
+          * 3 - 220 - 225 MHz
+          * 4 - 430 - 440 MHz
+          * 5 - 902 - 928 MHz
+          * 6 - 1240 - 1325 MHz
+          * 7 - 2300 - 2450 MHz
+          * 8 - 3300 - 3500 MHz
+    txCellularChannel:
+      type: integer
+      description: >
+        Tx cellular channel selection (LimeRFEController::CellularChannel)
+          * 0 - Band 1: 1.92 - 1.98 GHz
+          * 1 - Band 2: 1.84 - 1.92 GHz
+          * 2 - Band 3: 1.71 - 1.79 GHz
+          * 3 - Band 7: 2.48 - 2.58 GHz
+          * 4 - Band 38: 2.56 - 2.63 GHz
+    txPort:
+      type: integer
+      description: >
+        Tx port selected (LimeRFEController::TxPort)
+          * 0 - J3
+          * 1 - J4
+          * 2 - J5
+    swrEnable:
+      description: Boolean if SWR measurements are enabled else 0
+      type: integer
+    swrSource:
+      type: integer
+      description: >
+        SWR measurement source (LimeRFEController::SWRSource)
+          * 0 - External
+          * 1 - Cellular
+    txRxDriven:
+      description: Boolean 1 if Tx is copy of Rx else 0
+      type: integer
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIFeatureSetIndex:
+      type: integer
+    reverseAPIFeatureIndex:
+      type: integer
+    rollupState:
+      $ref: "http://swgserver:8081/api/swagger/include/RollupState.yaml#/RollupState"
+
+LimeRFEReport:
+  description: LimeRFE
+  properties:
+    rxOn:
+      description: Boolean 1 if Rx is active else 0
+      type: integer
+    txOn:
+      description: Boolean 1 if Tx is active else 0
+      type: integer
+    forwardPower:
+      description: relative forward power in centi-Bels
+      type: integer
+    reflectedPower:
+      description: relative reflected power in centi-Bels
+      type: integer
+
+LimeRFEActions:
+  description: LimeRFE
+  properties:
+    selectChannel:
+      type: integer
+      description: >
+        Select channel
+          * 0 - Rx
+          * 1 - Tx
+    deviceSetIndex:
+      type: integer
+      dexcription: Index of device set to synchronize switch with
+    switchChannel:
+      type: integer
+      description: >
+        Switch on or off
+          * 0 - Off
+          * 1 - On
+    getState:
+      type: integer
+      description: Set to non zero value to get the board state
+    fromToSettings:
+      type: integer
+      description: >
+        Move from/to settings to/from device
+          * 0 - From device to settings. The toGUI button in GUI mode
+          * 1 - From settings to device. The Apply button in GUI mode
+    openCloseDevice:
+      type: integer
+      description: >
+        Open or close device
+          * 0 - Close device
+          * 1 - Open device

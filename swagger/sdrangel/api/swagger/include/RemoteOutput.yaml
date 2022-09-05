@@ -1,0 +1,65 @@
+RemoteOutputSettings:
+  description: RemoteOutput
+  properties:
+    nbFECBlocks:
+      type: integer
+    nbTxBytes:
+      type: integer
+      description: >
+        Number of bytes in a transmited I or Q sample
+          * 1
+          * 2
+          * 4
+    apiAddress:
+      type: string
+    apiPort:
+      type: integer
+    dataAddress:
+      type: string
+    dataPort:
+      type: integer
+    deviceIndex:
+      device: remote SDRangel instance deviceset index
+      type: integer
+    channelIndex:
+      device: remote SDRangel instance channel index
+      type: integer
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIDeviceIndex:
+      type: integer
+
+RemoteOutputReport:
+  description: RemoteOutput
+  properties:
+    centerFrequency:
+      type: integer
+      format: int64
+    sampleRate:
+      type: integer
+    queueLength:
+      description: "Data read/write queue length in number of data frames"
+      type: integer
+    queueSize:
+      description: "Data read/write queue size in number of data frames"
+      type: integer
+    sampleCount:
+      description: count of samples that have been sent
+      type: integer
+    correctableErrorsCount:
+      description: "Absolute number of correctable errors"
+      type: integer
+    uncorrectableErrorsCount:
+      description: "Absolute number of uncorrectable errors"
+      type: integer
+    tvSec:
+      description: "Counts timestamp seconds"
+      type: integer
+    tvUSec:
+      description: "Counts timestamp microseconds"
+      type: integer

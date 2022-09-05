@@ -1,0 +1,3 @@
+[submodule "external/windows"]
+	path = external/windows
+	url = https://github.com/f4exb/sdrangel-windows-libraries.git

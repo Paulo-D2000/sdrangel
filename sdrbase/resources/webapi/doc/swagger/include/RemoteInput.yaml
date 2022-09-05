@@ -1,0 +1,53 @@
+RemoteInputSettings:
+  description: RemoteInput
+  properties:
+    apiAddress:
+      type: string
+    apiPort:
+      type: integer
+    dataAddress:
+      type: string
+    dataPort:
+      type: integer
+    multicastAddress:
+      type: string
+    multicastJoin:
+      type: integer
+      description: >
+        Joim multicast group
+        * 0 - leave group
+        * 1 - join group
+    dcBlock:
+      type: integer
+    iqCorrection:
+      type: integer
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIDeviceIndex:
+      type: integer
+
+RemoteInputReport:
+  description: RemoteInput
+  properties:
+    centerFrequency:
+      type: integer
+      format: int64
+    sampleRate:
+      type: integer
+    bufferRWBalance:
+      description: percentage off the mid buffer (positive read leads)
+      type: integer
+    remoteTimestamp:
+      description: string representation of timestamp as sent by the remote instance
+      type: string
+    minNbBlocks:
+      description: Minimum number of blocks retrieved per frame
+      type: integer
+    maxNbRecovery:
+      description: Maximum number of recovery blocks used per frame
+      type: integer

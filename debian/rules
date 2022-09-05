@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --parallel --buildsystem=cmake+ninja
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DARCH_OPT=nehalem -DENABLE_EXTERNAL_LIBRARIES=ON -DDEBUG_OUTPUT=ON -DBUILD_SERVER=OFF
+
+override_dh_auto_test:
+	echo "Skipping test step"
+
+# permit the packaging with /usr/local/lib libraries (from `make install`)
+# you can also use `export DEB_DH_SHLIBDEPS_ARGS_ALL=--dpkg-shlibdeps-params=--ignore-missing-info`
+# not a good idea!
+override_dh_shlibdeps:
+	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info

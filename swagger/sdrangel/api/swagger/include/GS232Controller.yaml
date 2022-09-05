@@ -1,0 +1,122 @@
+GS232ControllerSettings:
+  description: "GS-232 Controller settings"
+  properties:
+    azimuth:
+      description: Target azimuth in degrees (0-450)
+      type: number
+      format: float
+    elevation:
+      description: Target elevation in degrees (0-180)
+      type: number
+      format: float
+    serialPort:
+      description: The serial port the GS-232 controller is connected to
+      type: string
+    baudRate:
+      description: The baud rate to use for the serial connection to the GS-232 controller
+      type: integer
+    host:
+      description: Hostname / IP address of computer running rotctld.
+      type: string
+    port:
+      description: TCP port number rotctld is listening on.
+      type: integer
+    track:
+      description: Track a target where azimuth and elevation are determined by another plugin (1 for yes, 0 for no)
+      type: integer
+    source:
+      description: "Identifier of the channel or feature plugin providing azimuth and elevation (E.g. R0:0 ADSBDemod)"
+      type: string
+    azimuthOffset:
+      description: Azimuth offset in degrees
+      type: integer
+    elevationOffset:
+      description: Elevation offset in degrees
+      type: integer
+    azimuthMin:
+      description: Minimum azimuth the controller will output
+      type: integer
+    azimuthMax:
+      description: Maximum azimuth the controller will output
+      type: integer
+    elevationMin:
+      description: Minimum elevation the controller will output
+      type: integer
+    elevationMax:
+      description: Maximum elevation the controller will output
+      type: integer
+    tolerance:
+      description: Tolerance in degrees
+      type: number
+      format: float
+    protocol:
+      description: (0 GS-232, 1 SPID rot2prog)
+      type: integer
+    title:
+      type: string
+    rgbColor:
+      type: integer
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIFeatureSetIndex:
+      type: integer
+    reverseAPIFeatureIndex:
+      type: integer
+    rollupState:
+      $ref: "http://swgserver:8081/api/swagger/include/RollupState.yaml#/RollupState"
+
+GS232ControllerReport:
+  description: "GS-232 Controller report"
+  properties:
+    runningState:
+      type: integer
+      description: >
+        Running state
+          * 0 - not started
+          * 1 - idle
+          * 2 - running
+          * 3 - error
+    sources:
+      description: Names of pipe sources
+      type: array
+      items:
+        type: string
+    serialPorts:
+      description: Available serial ports
+      type: array
+      items:
+        type: string
+    targetAzimuth:
+      desription: "Target azimuth in degrees (0-450)"
+      type: number
+      format: float
+    targetElevation:
+      description: "Target elevation in degrees (0-180)"
+      type: number
+      format: float
+    currentAzimuth:
+      desription: "Current azimuth in degrees (0-450)"
+      type: number
+      format: float
+    currentElevation:
+      description: "Current elevation in degrees (0-180)"
+      type: number
+      format: float
+    onTarget:
+      description: "Indicates whether the rotator is pointing at the current target within the set tolerance"
+      type: integer
+
+GS232ControllerActions:
+  description: "GS-232 Controller actions"
+  properties:
+    run:
+      type: integer
+      description: >
+        Set the plugin running state
+          * 0 - idle
+          * 1 - run

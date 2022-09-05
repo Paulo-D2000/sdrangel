@@ -1,0 +1,48 @@
+RemoteSinkSettings:
+  description: "Remote channel sink settings"
+  properties:
+    nbFECBlocks:
+      description: "Number of FEC blocks per frame"
+      type: integer
+    nbTxBytes:
+      type: integer
+      description: >
+        Number of bytes in a transmited I or Q sample
+          * 1
+          * 2
+          * 4
+    deviceCenterFrequency:
+      type: integer
+      description: Device center frequency in kHz
+    dataAddress:
+      description: "Receiving USB data address"
+      type: string
+    dataPort:
+      description: "Receiving USB data port"
+      type: integer
+    rgbColor:
+      type: integer
+    title:
+      type: string
+    log2Decim:
+      type: integer
+    filterChainHash:
+      type: integer
+    streamIndex:
+      description: MIMO channel. Not relevant when connected to SI (single Rx).
+      type: integer
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIDeviceIndex:
+      type: integer
+    reverseAPIChannelIndex:
+      type: integer
+    channelMarker:
+      $ref: "/doc/swagger/include/ChannelMarker.yaml#/ChannelMarker"
+    rollupState:
+      $ref: "/doc/swagger/include/RollupState.yaml#/RollupState"

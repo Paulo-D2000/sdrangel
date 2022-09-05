@@ -1,0 +1,93 @@
+ChannelReport:
+  description: Base channel report. Only the channel report corresponding to the channel specified in the channelType field is or should be present.
+  discriminator: channelType
+  required:
+    - deviceHwType
+    - direction
+  properties:
+    channelType:
+      description: Channel type code
+      type: string
+    direction:
+      description: 0 for Rx only, 1 for Tx only or 2 for any number and direction (default 0)
+      type: integer
+    ADSBDemodReport:
+      $ref: "/doc/swagger/include/ADSBDemod.yaml#/ADSBDemodReport"
+    AISDemodReport:
+      $ref: "/doc/swagger/include/AISDemod.yaml#/AISDemodReport"
+    AISModReport:
+      $ref: "/doc/swagger/include/AISMod.yaml#/AISModReport"
+    AMDemodReport:
+      $ref: "/doc/swagger/include/AMDemod.yaml#/AMDemodReport"
+    AMModReport:
+      $ref: "/doc/swagger/include/AMMod.yaml#/AMModReport"
+    ATVModReport:
+      $ref: "/doc/swagger/include/ATVMod.yaml#/ATVModReport"
+    BFMDemodReport:
+      $ref: "/doc/swagger/include/BFMDemod.yaml#/BFMDemodReport"
+    ChirpChatDemodReport:
+      $ref: "/doc/swagger/include/ChirpChatDemod.yaml#/ChirpChatDemodReport"
+    ChirpChatModReport:
+      $ref: "/doc/swagger/include/ChirpChatMod.yaml#/ChirpChatModReport"
+    DATVDemodReport:
+      $ref: "/doc/swagger/include/DATVDemod.yaml#/DATVDemodReport"
+    DATVModReport:
+      $ref: "/doc/swagger/include/DATVMod.yaml#/DATVModReport"
+    DOA2Report:
+      $ref: "/doc/swagger/include/DOA2.yaml#/DOA2Report"
+    DSDDemodReport:
+      $ref: "/doc/swagger/include/DSDDemod.yaml#/DSDDemodReport"
+    IEEE_802_15_4_ModReport:
+      $ref: "/doc/swagger/include/IEEE_802_15_4_Mod.yaml#/IEEE_802_15_4_ModReport"
+    FileSinkReport:
+      $ref: "/doc/swagger/include/FileSink.yaml#/FileSinkReport"
+    FileSourceReport:
+      $ref: "/doc/swagger/include/FileSource.yaml#/FileSourceReport"
+    FreeDVDemodReport:
+      $ref: "/doc/swagger/include/FreeDVDemod.yaml#/FreeDVDemodReport"
+    FreeDVModReport:
+      $ref: "/doc/swagger/include/FreeDVMod.yaml#/FreeDVModReport"
+    FreqTrackerReport:
+      $ref: "/doc/swagger/include/FreqTracker.yaml#/FreqTrackerReport"
+    M17DemodReport:
+      $ref: "/doc/swagger/include/M17Demod.yaml#/M17DemodReport"
+    M17ModReport:
+      $ref: "/doc/swagger/include/M17Mod.yaml#/M17ModReport"
+    NFMDemodReport:
+      $ref: "/doc/swagger/include/NFMDemod.yaml#/NFMDemodReport"
+    NFMModReport:
+      $ref: "/doc/swagger/include/NFMMod.yaml#/NFMModReport"
+    NoiseFigureReport:
+      $ref: "/doc/swagger/include/NoiseFigure.yaml#/NoiseFigureReport"
+    SSBDemodReport:
+      $ref: "/doc/swagger/include/SSBDemod.yaml#/SSBDemodReport"
+    RadioAstronomyReport:
+      $ref: "/doc/swagger/include/RadioAstronomy.yaml#/RadioAstronomyReport"
+    RadioClockReport:
+      $ref: "/doc/swagger/include/RadioClock.yaml#/RadioClockReport"
+    RadiosondeDemodReport:
+      $ref: "/doc/swagger/include/RadiosondeDemod.yaml#/RadiosondeDemodReport"
+    RemoteSourceReport:
+      $ref: "/doc/swagger/include/RemoteSource.yaml#/RemoteSourceReport"
+    PacketDemodReport:
+      $ref: "/doc/swagger/include/PacketDemod.yaml#/PacketDemodReport"
+    PacketModReport:
+      $ref: "/doc/swagger/include/PacketMod.yaml#/PacketModReport"
+    PagerDemodReport:
+      $ref: "/doc/swagger/include/PagerDemod.yaml#/PagerDemodReport"
+    SigMFFileSinkReport:
+      $ref: "/doc/swagger/include/SigMFFileSink.yaml#/SigMFFileSinkReport"
+    SSBModReport:
+      $ref: "/doc/swagger/include/SSBMod.yaml#/SSBModReport"
+    UDPSourceReport:
+      $ref: "/doc/swagger/include/UDPSource.yaml#/UDPSourceReport"
+    UDPSinkReport:
+      $ref: "/doc/swagger/include/UDPSink.yaml#/UDPSinkReport"
+    # VORDemodMCReport:
+    #   $ref: "/doc/swagger/include/VORDemodMC.yaml#/VORDemodMCReport"
+    VORDemodReport:
+      $ref: "/doc/swagger/include/VORDemod.yaml#/VORDemodReport"
+    WFMDemodReport:
+      $ref: "/doc/swagger/include/WFMDemod.yaml#/WFMDemodReport"
+    WFMModReport:
+      $ref: "/doc/swagger/include/WFMMod.yaml#/WFMModReport"

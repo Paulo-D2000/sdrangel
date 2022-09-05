@@ -1,0 +1,64 @@
+RtlSdrSettings:
+  description: RTLSDR
+  properties:
+    devSampleRate:
+      type: integer
+    lowSampleRate:
+      type: integer
+    centerFrequency:
+      type: integer
+      format: int64
+    gain:
+      type: integer
+    loPpmCorrection:
+      type: integer
+    log2Decim:
+      type: integer
+    fcPos:
+      type: integer
+    dcBlock:
+      type: integer
+    iqImbalance:
+      type: integer
+    agc:
+      type: integer
+    noModMode:
+      type: integer
+    offsetTuning:
+      type: integer
+    transverterMode:
+      type: integer
+    transverterDeltaFrequency:
+      type: integer
+      format: int64
+    iqOrder:
+      type: integer
+      description: >
+        IQ samples order
+          * 0 - Q then I (swapped)
+          * 1 - I then Q (straight)
+    rfBandwidth:
+      type: integer
+    biasTee:
+      type: integer
+      description: >
+        Bias tee
+          * 0 - inactive
+          * 1 - active
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIDeviceIndex:
+      type: integer
+
+RtlSdrReport:
+  description: RTLSDR
+  properties:
+    gains:
+      type: array
+      items:
+        $ref: "/doc/swagger/include/Structs.yaml#/Gain"

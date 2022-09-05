@@ -1,0 +1,75 @@
+ChannelAnalyzerSettings:
+  description: ChannelAnalyzer
+  properties:
+    frequency:
+      type: integer
+    downSample:
+      description: Boolean
+      type: integer
+    downSampleRate:
+      type: integer
+    bandwidth:
+      type: integer
+    lowCutoff:
+      type: integer
+    spanLog2:
+      type: integer
+    ssb:
+      description: Boolean
+      type: integer
+    pll:
+      description: Boolean
+      type: integer
+    fll:
+      description: Boolean
+      type: integer
+    costasLoop:
+      description: Boolean
+      type: integer
+    rrc:
+      description: Boolean
+      type: integer
+    rrcRolloff:
+      description: in 100ths
+      type: integer
+    pllPskOrder:
+      type: integer
+    pllBandwidth:
+      type: number
+      format: float
+    pllDampingFactor:
+      type: number
+      format: float
+    pllLoopGain:
+      type: number
+      format: float
+    inputType:
+      description: see ChannelAnalyzerSettings::InputType
+      type: integer
+    rgbColor:
+      type: integer
+    title:
+      type: string
+    streamIndex:
+      description: MIMO channel. Not relevant when connected to SI (single Rx).
+      type: integer
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIDeviceIndex:
+      type: integer
+    reverseAPIChannelIndex:
+      type: integer
+    spectrumConfig:
+      $ref: "/doc/swagger/include/GLSpectrum.yaml#/GLSpectrum"
+    scopeConfig:
+      $ref: "/doc/swagger/include/GLScope.yaml#/GLScope"
+    channelMarker:
+      $ref: "/doc/swagger/include/ChannelMarker.yaml#/ChannelMarker"
+    rollupState:
+      $ref: "/doc/swagger/include/RollupState.yaml#/RollupState"
+

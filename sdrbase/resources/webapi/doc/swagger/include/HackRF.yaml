@@ -1,0 +1,88 @@
+HackRFInputSettings:
+  description: HackRF
+  properties:
+    centerFrequency:
+      type: integer
+      format: int64
+    LOppmTenths:
+      type: integer
+    bandwidth:
+      type: integer
+    lnaGain:
+      type: integer
+    vgaGain:
+      type: integer
+    log2Decim:
+      type: integer
+    fcPos:
+      description: 0=Infra 1=Supra 2=Center
+      type: integer
+    devSampleRate:
+      type: integer
+    biasT:
+      type: integer
+    lnaExt:
+      type: integer
+    dcBlock:
+      type: integer
+    iqCorrection:
+      type: integer
+    transverterMode:
+      type: integer
+    transverterDeltaFrequency:
+      type: integer
+      format: int64
+    iqOrder:
+      type: integer
+      description: >
+        IQ samples order
+          * 0 - Q then I (swapped)
+          * 1 - I then Q (straight)
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIDeviceIndex:
+      type: integer
+
+HackRFOutputSettings:
+  description: HackRF
+  properties:
+    centerFrequency:
+      type: integer
+      format: int64
+    LOppmTenths:
+      type: integer
+    bandwidth:
+      type: integer
+    vgaGain:
+      type: integer
+    log2Interp:
+      type: integer
+    fcPos:
+      description: 0=Infra 1=Supra 2=Center
+      type: integer
+    devSampleRate:
+      type: integer
+    biasT:
+      type: integer
+    lnaExt:
+      type: integer
+    transverterMode:
+      type: integer
+    transverterDeltaFrequency:
+      type: integer
+      format: int64
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIDeviceIndex:
+      type: integer
+

@@ -1,0 +1,75 @@
+SDRPlayV3Settings:
+  description: SDRplayV3
+  properties:
+    centerFrequency:
+      type: integer
+      format: int64
+    LOppmTenths:
+      type: integer
+    ifFrequencyIndex:
+      type: integer
+    bandwidthIndex:
+      type: integer
+    devSampleRate:
+      type: integer
+    log2Decim:
+      type: integer
+    fcPos:
+      type: integer
+    dcBlock:
+      type: integer
+    iqCorrection:
+      type: integer
+    lnaIndex:
+      type: integer
+    ifAGC:
+      type: integer
+    ifGain:
+      type: integer
+    amNotch:
+      type: integer
+    fmNotch:
+      type: integer
+    dabNotch:
+      type: integer
+    extRef:
+      type: integer
+    tuner:
+      type: integer
+    antenna:
+      type: integer
+    transverterMode:
+      type: integer
+    transverterDeltaFrequency:
+      type: integer
+      format: int64
+    iqOrder:
+      type: integer
+      description: >
+        IQ samples order
+          * 0 - Q then I (swapped)
+          * 1 - I then Q (straight)
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIDeviceIndex:
+      type: integer
+
+SDRPlayV3Report:
+  description: SDRplayV3
+  properties:
+    deviceType:
+      type: string
+      description: SDRplay device type. Can be RSP1, RSP1A, RSP2, RSPduo, RSPdx, Unknown
+    bandwidths:
+      type: array
+      items:
+        $ref: "/doc/swagger/include/Structs.yaml#/Bandwidth"
+    intermediateFrequencies:
+      type: array
+      items:
+        $ref: "/doc/swagger/include/Structs.yaml#/Frequency"
