@@ -4,7 +4,6 @@
 
 #include <algorithm>
 #include <cstdlib>
-#include <cstdint>
 #include <cassert>
 #include <array>
 #include <bitset>
@@ -144,15 +143,15 @@ auto llr(float sample)
     return std::get<1>(*it);
 }
 
-template <size_t M, typename T, size_t N, typename U, size_t IN>
-auto depunctured(std::array<T, N> puncture_matrix, std::array<U, IN> in)
+template <size_t Mn, typename T, size_t Ny, typename U, size_t Ig>
+auto depunctured(std::array<T, Ny> puncture_matrix, std::array<U, Ig> in)
 {
-    static_assert(M % N == 0, "M must be an integer multiple of N");
+    static_assert(Mn % Ny == 0, "M must be an integer multiple of N");
 
-    std::array<U, M> result;
+    std::array<U, Mn> result;
     size_t index = 0;
     size_t pindex = 0;
-    for (size_t i = 0; i != M; ++i)
+    for (size_t i = 0; i != Mn; ++i)
     {
         if (!puncture_matrix[pindex++])
         {
@@ -162,19 +161,19 @@ auto depunctured(std::array<T, N> puncture_matrix, std::array<U, IN> in)
         {
             result[i] = in[index++];
         }
-        if (pindex == N) pindex = 0;
+        if (pindex == Ny) pindex = 0;
     }
     return result;
 }
 
-template <size_t IN, size_t OUT, size_t P>
-size_t depuncture(const std::array<int8_t, IN>& in,
-    std::array<int8_t, OUT>& out, const std::array<int8_t, P>& p)
+template <size_t IX, size_t OUTX, size_t P>
+size_t depuncture(const std::array<int8_t, IX>& in,
+    std::array<int8_t, OUTX>& out, const std::array<int8_t, P>& p)
 {
     size_t index = 0;
     size_t pindex = 0;
     size_t bit_count = 0;
-    for (size_t i = 0; i != OUT && index < IN; ++i)
+    for (size_t i = 0; i != OUTX && index < IX; ++i)
     {
         if (!p[pindex++])
         {
@@ -191,14 +190,14 @@ size_t depuncture(const std::array<int8_t, IN>& in,
 }
 
 
-template <typename T, size_t IN, typename U, size_t OUT, size_t P>
-size_t puncture(const std::array<T, IN>& in,
-    std::array<U, OUT>& out, const std::array<int8_t, P>& p)
+template <typename T, size_t INK, typename U, size_t OUTZ, size_t P>
+size_t puncture(const std::array<T, INK>& in,
+    std::array<U, OUTZ>& out, const std::array<int8_t, P>& p)
 {
     size_t index = 0;
     size_t pindex = 0;
     size_t bit_count = 0;
-    for (size_t i = 0; i != IN && index != OUT; ++i)
+    for (size_t i = 0; i != INK && index != OUTZ; ++i)
     {
         if (p[pindex++])
         {

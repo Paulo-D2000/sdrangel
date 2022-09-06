@@ -16,8 +16,6 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.          //
 ///////////////////////////////////////////////////////////////////////////////////
 
-#include "m17demodplugin.h"
-
 #include <QtPlugin>
 #include "plugin/pluginapi.h"
 #ifndef SERVER_MODE

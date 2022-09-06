@@ -154,7 +154,7 @@ struct M17FrameDecoder
      */
 	DecodeResult decode_lsf(input_buffer_t& buffer, size_t& viterbi_cost)
     {
-        auto bit_count = modemm17::depuncture(buffer, depuncture_buffer.lsf, P1);
+        auto bit_count = depuncture(buffer, depuncture_buffer.lsf, P1);
         viterbi_cost = viterbi_.decode(depuncture_buffer.lsf, decode_buffer.lsf);
         to_byte_array(decode_buffer.lsf, output_buffer.lsf);
         
@@ -268,7 +268,7 @@ struct M17FrameDecoder
 
     DecodeResult decode_bert(input_buffer_t& buffer, size_t& viterbi_cost)
     {
-        auto bit_count = modemm17::depuncture(buffer, depuncture_buffer.bert, P2);
+        auto bit_count = depuncture(buffer, depuncture_buffer.bert, P2);
         viterbi_cost = viterbi_.decode(depuncture_buffer.bert, decode_buffer.bert);
         to_byte_array(decode_buffer.bert, output_buffer.bert);
 
@@ -283,7 +283,7 @@ struct M17FrameDecoder
         std::array<int8_t, 272> tmp;
         std::copy(buffer.begin() + 96, buffer.end(), tmp.begin());
 
-        auto bit_count = modemm17::depuncture(tmp, depuncture_buffer.stream, P2);
+        auto bit_count = depuncture(tmp, depuncture_buffer.stream, P2);
         viterbi_cost = viterbi_.decode(depuncture_buffer.stream, decode_buffer.stream);
         to_byte_array(decode_buffer.stream, output_buffer.stream);
 
@@ -309,7 +309,7 @@ struct M17FrameDecoder
      */
    DecodeResult decode_packet(input_buffer_t& buffer, size_t& viterbi_cost, FrameType type)
     {
-        auto bit_count = modemm17::depuncture(buffer, depuncture_buffer.packet, P3);
+        auto bit_count = depuncture(buffer, depuncture_buffer.packet, P3);
         viterbi_cost = viterbi_.decode(depuncture_buffer.packet, decode_buffer.packet);
         to_byte_array(decode_buffer.packet, output_buffer.packet);
         
